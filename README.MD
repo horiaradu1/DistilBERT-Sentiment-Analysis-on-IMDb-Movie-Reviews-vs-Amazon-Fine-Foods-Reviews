@@ -1,5 +1,5 @@
 # DistilBERT Sentiment Analysis on IMDb Movie Reviews vs Amazon Fine Foods Reviews
-
+### Horia-Gabriel Radu and Alexandru-Liviu Bratosin
 ## Structure
 
 ```bash
