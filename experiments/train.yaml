@@ -1,0 +1,46 @@
+common:
+  root_dir: logs
+  seed: 42
+  epochs: 10
+  batch_size: 256
+  num_workers: 12
+  max_sequence_length: 256
+  padding: max_length
+  truncation: True
+  lr: 5.0e-5
+  lr_decay_step_size: 8
+  lr_decay_gamma: 0.1
+  lr_decay_last_epoch: -1
+  weight_decay: 1.0e-4
+  vocab_size: 30522
+  max_position_embeddings: 512
+  sinusoidal_pos_embds: False
+  n_layers: 6
+  n_heads: 12
+  dim: 768
+  hidden_dim: 3072
+  dropout: 0.1
+  attention_dropout: 0.1
+  activation: gelu
+  initializer_range: 0.02
+  qa_dropout: 0.1
+  seq_classif_dropout: 0.2
+  pad_token_id: 0
+  num_labels: 2
+
+experiments:
+  - name: pretrain=false;train=imdb
+    pretrained: False
+    dataset: imdb
+
+  - name: pretrain=false;train=amazon
+    pretrained: False
+    dataset: amazon
+
+  - name: pretrain=true;train=imdb
+    pretrained: True
+    dataset: imdb
+    
+  - name: pretrain=false;train=amazon
+    pretrained: True
+    dataset: amazon

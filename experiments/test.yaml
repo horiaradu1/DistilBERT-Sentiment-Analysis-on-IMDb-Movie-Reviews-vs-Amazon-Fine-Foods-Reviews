@@ -1,0 +1,48 @@
+common: 
+  max_sequence_length: 256
+  truncation: true
+  batch_size: 256
+  num_workers: 12
+  root_dir: logs
+  padding: max_length
+
+experiments:
+- description: Train on IMDb, test on IMDb, w/o pretrain
+  name: pretrain=false;train=imdb;test=imdb
+  version: pretrain=false;train=imdb
+  dataset: imdb
+
+- description: Train on Amazon, test on Amazon, w/o pretrain
+  name: pretrain=false;train=amazon;test=amazon
+  version: pretrain=false;train=amazon
+  dataset: amazon
+
+- description: Train on IMDb, test on Amazon, w/o pretrain
+  name: pretrain=false;train=imdb;test=amazon
+  version: pretrain=false;train=imdb
+  dataset: amazon
+
+- description: Train on Amazon, test on IMDb, w/o pretrain
+  name: pretrain=false;train=amazon;test=imdb
+  version: pretrain=false;train=amazon
+  dataset: imdb
+
+- description: Train on IMDb, test on IMDb, w/ pretrain
+  name: pretrain=true;train=imdb;test=imdb
+  version: pretrain=true;train=imdb
+  dataset: imdb
+  
+- description: Train on Amazon, test on Amazon, w/ pretrain
+  name: pretrain=true;train=amazon;test=amazon
+  version: pretrain=true;train=amazon
+  dataset: amazon
+
+- description: Train on IMDb, test on Amazon, w/ pretrain
+  name: pretrain=true;train=imdb;test=amazon
+  version: pretrain=true;train=imdb
+  dataset: amazon
+  
+- description: Train on Amazon, test on IMDb, w/ pretrain
+  name: pretrain=true;train=amazon;test=imdb
+  version: pretrain=true;train=amazon
+  dataset: imdb
